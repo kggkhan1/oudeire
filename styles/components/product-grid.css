@@ -1,0 +1,141 @@
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+}
+
+.product-card {
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.product-image {
+    height: 250px;
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.product-image i {
+    font-size: 60px;
+    color: var(--primary);
+    opacity: 0.7;
+}
+
+.product-badge {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
+    background-color: var(--accent);
+    color: var(--charcoal);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 20px;
+    font-size: var(--text-xs);
+    font-weight: 600;
+}
+
+.product-info {
+    padding: var(--space-6);
+}
+
+.product-name {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+    color: var(--primary);
+}
+
+.product-description {
+    color: var(--gray-medium);
+    margin-bottom: var(--space-4);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+}
+
+.product-price {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: var(--space-4);
+    font-size: var(--text-xl);
+}
+
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-3);
+}
+
+.product-actions button {
+    flex: 1;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: var(--text-base);
+    color: var(--charcoal);
+    transition: color 0.3s ease;
+    padding: var(--space-2);
+    border-radius: var(--border-radius);
+}
+
+.product-actions button:hover {
+    background-color: var(--gray-light);
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: var(--space-4);
+    }
+    
+    .product-image {
+        height: 200px;
+    }
+    
+    .product-info {
+        padding: var(--space-4);
+    }
+}
+.product-card {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+.product-image {
+    width: 100%;
+    height: 280px; /* fixed height for uniform cards */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* crops while keeping proportions */
+    display: block;
+}
+

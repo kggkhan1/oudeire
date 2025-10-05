@@ -1,0 +1,124 @@
+.about-content {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    margin: 60px 0;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    flex: 0 0 400px;
+}
+
+.about-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .about-image {
+        flex: none;
+        width: 100%;
+    }
+    
+    .about-img {
+        height: 300px;
+    }
+}
+.about-page-content {
+    display: grid;
+    gap: var(--space-12);
+}
+
+.about-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+}
+
+.about-story-text {
+    padding-right: var(--space-8);
+}
+
+.about-story-image {
+    height: 400px;
+    background-color: var(--secondary);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-story-image i {
+    font-size: 100px;
+    color: var(--primary);
+    opacity: 0.5;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-8);
+    margin-top: var(--space-8);
+}
+
+.value-card {
+    background-color: white;
+    padding: var(--space-8);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.value-card i {
+    font-size: 48px;
+    color: var(--accent);
+    margin-bottom: var(--space-4);
+}
+
+.value-card h3 {
+    margin-bottom: var(--space-3);
+    color: var(--primary);
+}
+
+@media (max-width: 992px) {
+    .about-story {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    
+    .about-story-text {
+        padding-right: 0;
+    }
+    
+    .about-story-image {
+        height: 300px;
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .value-card {
+        padding: var(--space-6);
+    }
+
+    /* styles/pages/about.css */
+
+}
