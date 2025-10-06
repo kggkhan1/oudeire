@@ -1,0 +1,144 @@
+/* Account Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1002;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--cream);
+    margin: 5% auto;
+    padding: var(--space-8);
+    border-radius: var(--border-radius-lg);
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: var(--shadow-2xl);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    font-size: var(--text-2xl);
+    cursor: pointer;
+    color: var(--gray-medium);
+    transition: var(--transition);
+}
+
+.close-btn:hover {
+    color: var(--primary);
+}
+
+.modal h2 {
+    text-align: center;
+    margin-bottom: var(--space-6);
+    color: var(--primary);
+}
+
+.modal .form-group {
+    margin-bottom: var(--space-4);
+}
+
+.modal input {
+    width: 100%;
+    padding: var(--space-3);
+    border: 1px solid var(--gray-light);
+    border-radius: var(--border-radius);
+    font-size: var(--text-base);
+}
+
+.modal input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.switch-form {
+    text-align: center;
+    margin-top: var(--space-4);
+    color: var(--gray-medium);
+}
+
+.switch-form a {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.switch-form a:hover {
+    text-decoration: underline;
+}
+
+.user-info {
+    text-align: center;
+}
+
+.user-info p {
+    margin-bottom: var(--space-4);
+    color: var(--charcoal);
+}
+
+.account-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+}
+
+/* Contact Status Styles */
+.contact-status {
+    margin-top: var(--space-4);
+    padding: var(--space-3);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.contact-status.loading {
+    background-color: var(--secondary);
+    color: var(--charcoal);
+}
+
+.contact-status.success {
+    background-color: var(--success);
+    color: white;
+}
+
+.contact-status.error {
+    background-color: var(--error);
+    color: white;
+}
+
+.success-message,
+.error-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+}
+
+.success-message::before {
+    content: '✓';
+    font-weight: bold;
+}
+
+.error-message::before {
+    content: '!';
+    font-weight: bold;
+}

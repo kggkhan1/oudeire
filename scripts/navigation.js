@@ -34,7 +34,8 @@ function initNavigation() {
             
             // Show target page
             document.getElementById(`${targetPage}-page`).classList.add('active');
-            
+            menuToggle.classList.toggle("open");
+
             // Update active nav link
             navLinks.forEach(navLink => {
                 navLink.classList.remove('active');
@@ -98,12 +99,69 @@ function loadAboutPage() {
     console.log('Loading about page content');
 }
 
-function loadBlogPage() {
-    // Blog page specific content loading
-    console.log('Loading blog page content');
-}
-
 function loadContactPage() {
     // Contact page specific content loading
     console.log('Loading contact page content');
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const exploreBtn = document.getElementById("explore-btn");
+  const pages = document.querySelectorAll(".page");
+
+  if (exploreBtn) {
+    exploreBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Hide all pages
+      pages.forEach(page => page.classList.remove("active"));
+
+      // Show the shop page
+      const shopPage = document.getElementById("shop-page");
+      if (shopPage) {
+        shopPage.classList.add("active");
+        window.scrollTo({ top: 0, behavior: "smooth" }); // Optional smooth scroll
+      }
+
+      // Update nav link state if needed
+      document.querySelectorAll(".nav-link").forEach(link => link.classList.remove("active"));
+      const shopNav = document.querySelector('.nav-link[data-page="shop"]');
+      if (shopNav) shopNav.classList.add("active");
+    });
+  }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll(".nav-link");
+  const pages = document.querySelectorAll(".page");
+
+  // Handle navigation clicks
+  navLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const targetPage = link.getAttribute("data-page");
+
+      // Hide all pages
+      pages.forEach(page => page.classList.remove("active"));
+
+      // Show the selected page
+      const target = document.getElementById(`${targetPage}-page`);
+      if (target) target.classList.add("active");
+
+      // Update active link styling
+      navLinks.forEach(nav => nav.classList.remove("active"));
+      link.classList.add("active");
+
+      // Optional: scroll to top smoothly
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+
+  // Handle Explore Collection button
+  const exploreBtn = document.getElementById("explore-btn");
+  if (exploreBtn) {
+    exploreBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector('.nav-link[data-page="shop"]').click();
+    });
+  }
+});
+

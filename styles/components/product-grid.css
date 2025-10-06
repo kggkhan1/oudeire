@@ -139,3 +139,14 @@
     display: block;
 }
 
+/* --- Fade-in animation for product images --- */
+.product-image img {
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.product-image img.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
